@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/CHALLENGE.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="backi challenge">
+        <ul class="navigation am">
+            <li><a href="">MAIN</a></li>
+            <li><a href="" class="bordeco">CHALLENGE</a></li>
+            <li><a href="">LOGIN</a></li>
+            <li><a href="">Q&A</a></li>
+        </ul>
+        <div class="timemenu">
+            <span>00 : 00 : 00</span>
+            <ul class="navi">
+                <li value="problem">문제</li>
+                <li value="scenario">시나리오</li>
+                <li value="ranking">순위</li>
+            </ul>
+        </div>
+        
+        <div class="title on-pocus"><span>forensic</span></div>
+        <div class="problem hide">
+            <div class="aro"><div class="l"></div></div>
+            <div class="scr">
+                <div class="pro">
+
+                    <div ><div>제목 <br><br> 1p</div></div>
+                    <div ><div>제목 <br><br>2</div></div>
+                    <div ><div>제목 <br><br>3</div></div>
+                    <div ><div>제목 <br><br>4</div></div>
+                    <div ><div>제목 <br><br>5</div></div>
+                    <div ><div>제목 <br><br>6</div></div>
+                    <div ><div>제목 <br><br>7</div></div>
+                    <div ><div>제목 <br><br>8</div></div>
+                    <div ><div>제목 <br><br>9</div></div>
+                    <div ><div>제목 <br><br>10</div></div>
+                    <div ><div>제목 <br><br>11</div></div>
+                    <div ><div>제목 <br><br>12</div></div>
+                </div>
+            </div>
+            <div class="aro"><div class="r"></div></div>
+        </div>
+        <div class="scenario hide">시나리오</div>
+        <div class="ranking hide">
+            <div class="fro">
+                <span>NO.1</span>
+                <div></div>
+                <p>NAMEname</p>
+            </div>
+            <div class="rlist">
+                <table>
+                    <div class="aro ll"></div>
+                    <tbody>
+                        <tr>
+                            <td>1</td><td><div></div>&nbsp&nbsp<span>name</span></td><td>score</td><td>clup</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td><div></div>&nbsp&nbsp<span>name</span></td><td>score</td><td>club</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td><div></div>&nbsp&nbsp<span>name</span></td><td>score</td><td>club</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td><div></div>&nbsp&nbsp<span>name</span></td><td>score</td><td>club</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td><div></div>&nbsp&nbsp<span>name</span></td><td>score</td><td>club</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td><div></div>&nbsp&nbsp<span>name</span></td><td>score</td><td>club</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td><div></div>&nbsp&nbsp<span>name</span></td><td>score</td><td>club</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="aro rl"></div>
+            </div>
+        </div>
+        <div class="problembox">
+            
+        </div>
+    </div>
+    <script>
+        $( document ).ready( function(){
+            var a=0;
+               $('.navi li').click(function(){
+                    if(a==1){
+                        return 0;
+                    }
+                    a=1;
+                    var c=0;
+                    function addc(){
+                        $('.problem').addClass('hide');
+                        $('.scenario').addClass('hide');
+                        $('.ranking').addClass('hide');
+                    }
+                    function subc(t){
+                        $('.'+t).removeClass('hide');
+                    }
+                    if($(this).css('color') == 'rgb(255, 255, 255)'){
+                        $('.navi').children().css('color','rgba(255, 255, 255, 0.5)');
+                        addc();
+                        a=0;
+                    }
+                    else{
+                        $('.navi').children().each(function(){
+                            if($(this).css('color') == 'rgb(255, 255, 255)'){
+                                c++;
+                            }
+                        });
+                        if(c == 0){
+                            $('.'+$(this).attr('value')).toggleClass('hide');
+                            a=0;
+                        }
+                        else{
+                            addc();
+                            var t = $(this).attr('value');
+                            setTimeout(function(){
+                                subc(t);
+                                a=0;
+                            },1000);
+                        }
+                        $('.navi').children().css('color','rgba(255, 255, 255, 0.5)');
+                        $(this).css('color','white');
+                    }
+               });
+            $('.l').click(function(){
+                var scroll = $('.scr').scrollLeft();
+                $('.scr').animate({scrollLeft :  scroll - 300 },100);
+                var scroll = $('.scr').scrollTop();
+                $('.scr').animate({scrollTop :  scroll - 300 },100);
+            })   
+            $('.r').click(function(){
+                var scroll = $('.scr').scrollLeft();
+                $('.scr').animate({scrollLeft :  scroll + 300 },100);
+                var scroll = $('.scr').scrollTop();
+                $('.scr').animate({scrollTop :  scroll + 300 },100);
+            })
+        });
+    </script>
+</body>
+</html>

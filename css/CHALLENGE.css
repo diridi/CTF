@@ -1,0 +1,357 @@
+html, body{
+    height: 100%;
+    position: relative;
+}
+.navigation{
+    height: 7%;
+}
+.challenge{
+    background-image:  url("../image/challenge.jpg");
+    background-position: center;
+    height: 100%;
+}
+@font-face {
+    font-family: DIGI;
+    src: url('../font/DS-DIGI.TTF');
+  }
+.timemenu{
+    z-index: 2;
+    width: 100%;
+    height: 18%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.timemenu span{
+    display: block;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 75px;
+    font-family: DIGI;
+}
+.navi{
+    margin: 0px;
+    text-align: center;
+    list-style: none;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0px;
+    display: flex;justify-content: center;
+}
+.navi li{
+    font-size: 25px;
+    padding: 3px 15px 3px 15px;
+    cursor: pointer;
+    border-left: solid 4px #A03737;
+}
+.navi li:last-child{
+    border-right: solid 4px #A03737;
+}
+.title{
+    background-image: url('../image/oldpaper.png');
+    background-size: 125%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    text-align: center;
+    user-select:none;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eeeeee;
+    font-size: 280px;
+    font-family: century;
+    letter-spacing: 50px;
+    width: 100%;
+    height: 70%;
+
+    position: absolute;
+    top: 26%;
+    z-index: 0;
+}
+.title span{
+    margin-bottom: 5%;
+}
+@media ( max-width: 1450px ){
+    .title{
+        font-size: 200px;
+        letter-spacing: 30px;
+    }
+}
+@media ( max-width: 1000px ){
+    .title{
+        font-size: 100px;
+        letter-spacing: 10px;
+    }
+}
+.hide{
+    transform: rotateX(90deg);
+    visibility: hidden;
+    z-index: -1;
+}
+.problem, .scenario{
+    width: 100%;
+    height: calc(72%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    z-index: 1;
+    top: calc(25%+16px);
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    position: absolute;
+    transform-origin: 0 0;
+    transition: all 1s;
+}
+.problem .aro{
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.problem .aro div{
+    background-image: url('../image/arrow.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80%;
+    height: 15%;
+    cursor: pointer;
+}
+.problem .aro .r{
+    transform: rotateZ(180deg);
+}
+.problem .scr{
+    width: 90%;
+    overflow-x: scroll;
+}
+.problem .pro{
+    width: 150%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.problem .pro div{
+    width: 16.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.problem .pro div div{
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    background: rgba(200, 200, 200, 0.7);
+    transition: all 1s;
+}
+.problem .pro div div:hover{
+    transform: rotateZ(10deg) scale(1.1);
+}
+.ranking{
+    width: 100%;
+    height: 72%;
+    color: white;
+    z-index: 1;
+    top: calc(25%+16px);
+    position: absolute;
+    transform-origin: 0 0;
+    transition: all 1s;
+    display: flex;
+    justify-content: center;
+}
+.ranking .fro{
+    width: 35%;
+    margin: 30px;
+    margin-right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fro span{
+    color: #F15C5C;
+    font-size: 50px;
+}
+.fro div{
+    width: 60%;
+    padding-top: 60%;
+    border-radius: 50%;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../image/detective.png");
+}
+.fro p{
+    font-size: 60px;
+    margin: 0px;
+    overflow: hidden;
+}
+.ranking .rlist{
+    color: black;
+    width: 50%;
+    margin: 30px;
+    margin-left: 15px;
+    background: #EFEFEF;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.rlist table{
+    width: 80%;
+    height: 90%;
+    border-spacing: 0px 15px;
+    font-size: 23px;
+}
+.rlist tr{
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 5px lightgrey;
+    background: white;
+}
+.rlist tr td:first-child{
+    border-radius: 15px 0px 0px 15px;
+}
+.rlist tr td:last-child{
+    border-radius: 0px 15px 15px 0px;
+}
+.rlist tr td:nth-child(2){
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+.rlist tr div{
+    width: 28px;
+    padding-top: 28px;
+    border-radius: 50%;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../image/detective.png');
+
+}
+.rlist .aro{
+    width: 10%;
+    height: 100%;
+    background-image: url('../image/arrow.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.rlist .rl{
+    transform: rotateZ(180deg);
+}
+
+::-webkit-scrollbar{
+    height: 10px;
+}
+::-webkit-scrollbar-track{
+    background: rgba(200, 200, 200, 0.5);
+}
+::-webkit-scrollbar-thumb{
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+@media ( max-width: 1150px ){
+    .problem .pro div div{
+        width: 180px;
+        height: 180px;
+    }
+}
+@media ( max-width: 850px ){
+    .problem{
+        flex-direction: column;
+    }
+    .problem .scr{
+        width: 100%;
+        height: 80%;
+        overflow-x: auto;
+        overflow-y: scroll;
+    }
+    .problem .pro{
+        width: 100%;
+        height: 360%;
+    }
+    .problem .pro div{
+        width: 50%;
+    }
+    .problem .aro{
+        width: 100%;
+        height: 10%;
+    }
+    .problem .aro div{
+        background-image: url('../image/arrowtop.png');
+        width: 100%;
+        height: 100%;
+        background-size: 10%;
+    }
+    .problem .aro .r{
+        transform: rotateZ(180deg);
+    }
+}
+@media ( max-width: 700px ){
+    .navigation{
+        height: 15%;
+    }
+    .timemenu span{
+        font-size: 40px;
+    }
+    .title{
+        top: 35%;
+        height: 64%;
+    }
+    .problem, .scenario, .ranking{
+        height: 64%;
+    }
+    .ranking{
+        flex-direction: column;
+    }
+    .ranking .fro{
+        width: 94%;
+        margin: 3%;
+        flex-direction: row;
+        text-align: center;
+    }
+    .ranking .fro span{
+        width: 30%;
+        font-size: 30px;
+    }
+    .ranking .fro p{
+        font-size: 20px;
+    }
+    .ranking .fro div{
+        width: 25%;
+        padding-top: 25%;
+    }
+    .ranking .rlist{
+        width: 96%;
+        margin: 2%;
+    }
+    .rlist table{
+        font-size: 20px;
+    }
+}
+@media ( max-width: 450px ){
+    .problem .pro{
+        height: 240%;
+    }
+    .problem .pro div div{
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+    }
+}
+@media ( max-height: 850px ){
+    body{
+        height: 850px;
+    }
+}
